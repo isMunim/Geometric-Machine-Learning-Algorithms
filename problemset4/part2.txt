@@ -1,0 +1,34 @@
+Dataset 1:
+
+7-Give an estimation of how many connected components probably this data has
+based on 0-persistence diagram
+1 long bar, so the data has one cluster/connected components and rest is noise
+
+
+8-Does the data have any important(long bars)1-persistence feature?
+Explain your observation.
+Data has one long bar so it probably has one genus 
+
+
+
+9-Write down the persistence of the highest 1-feature.
+(Recall that persistence of a bar = death -birth)
+persistence = 1.55-0.2 = 1.35
+
+
+Dataset 2:
+
+7-Give an estimation of how many connected components probably this data has
+based on 0-persistence diagram
+Since there's only one big line, it is probably 1 cluster/1 connected component
+figure with the rest being noise.
+
+
+8-Does the data have any important(long bars)1-persistence feature?
+Explain your observation.
+Data has two almost equal long bars. This probably means that the data has 2 genus, probably like an 8.
+
+
+9-Write down the persistence of the highest 1-feature.
+(Recall that persistence of a bar = death -birth)
+persistence = 1.75-0.5 = 1.25
