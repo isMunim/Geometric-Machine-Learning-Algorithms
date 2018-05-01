@@ -227,7 +227,17 @@ Use the data "S" with PCA and, project and plot the data and explain your observ
 
 
 Generally, PCA produces an approximate normal of the point cloud. My
-implementation 
+implementation of MDS uses the point cloud to create a similarity matrix and
+then essentially performs PCA on the disimilarity matrix. The covariance of 
+data (used by the PCA algorithm) and the euclidean distance between data points
+(used in MDS) are nearly identical. This is (probably) why the results of the my MDA and 
+PCA are very similar.
+
+PCA did not do a very good job of reducing the dimensions of the dataset to 2 
+dimensions. There's a lot of overlap of the points and there's not much that 
+can be 'analyzed' other than an estimate of the original shape of the data.
+PCA was unbale to unwrap the data and completely lay it out for further analysis. 
+
 
 """
 
