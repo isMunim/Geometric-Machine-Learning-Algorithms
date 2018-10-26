@@ -42,5 +42,7 @@ Here's a list of algorithm implemented in this repo:
 **Section 7**
 
 
+You can read the README files in each section for more details.
+
 [install]: https://www.anaconda.com/download/
 [go to this link]: https://networkx.github.io/documentation/latest/install.html
