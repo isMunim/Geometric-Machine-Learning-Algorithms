@@ -40,7 +40,9 @@ Here's a list of algorithm implemented in this repo:
 - **Laplacian** based node position
 
 **Section 7**
-
+- **MDS** for dimensionality reduction
+- **ISOMAP** for dimensionality reduction
+- **PCA** for dimensionality reduction
 
 You can read the README files in each section for more details.
 

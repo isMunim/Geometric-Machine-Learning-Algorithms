@@ -20,37 +20,37 @@ from mpl_toolkits.mplot3d import Axes3D
 from scipy.sparse.csgraph import floyd_warshall
 
 """
-Implement MDS 
+Implement MDS
 
 How it works:
     Construct a matrix of squares of distances
     Apply Double centering
     Extract d largest positive eigen value/vectors
     D-Dimensional MDS positions are outputted...
-    
-    takes as input a distance matrix (k by k matrix) and number of component d<n 
+
+    takes as input a distance matrix (k by k matrix) and number of component d<n
 """
 def doMDS( distanceMatrix, d):
     '''
     Inputs: distance matrix of a data set
             d desired dimensions of the output
-            
+
     Outputs: X set of coordinates that will draw the dataset in d dimensions
     '''
     #Calculate the square of distance matrix
     distanceMatrixSquared = np.square(distanceMatrix)
     #Get the value of n, the number of points
     numPoints = np.shape(distanceMatrixSquared)[1]
-    
+
     # Applying double centering:
-    
+
     #Create an identity matrix (j) of size n by n
     j1=np.identity(numPoints)
     #Create j' -> Basically an n by n matrix with all values =1
     j1dash=np.ones_like(j1)
     # jSub = j - 1/n
     jSub = j1 - (1/numPoints)
-    # Multiplying jSub with the  matrix j' 
+    # Multiplying jSub with the  matrix j'
     j = np.multiply(jSub,j1dash)
     #Caculating B ->
     # j X P^2 X j X -1/2
@@ -60,32 +60,32 @@ def doMDS( distanceMatrix, d):
 
     #Calculating the eigen values and vectors of our B
     w,v=LA.eig(b)
-    #Ensuring we only have real values and no complex numbers    
+    #Ensuring we only have real values and no complex numbers
     w= np.real(w)
     v= np.real(v)
 
 #    print("First Eigenvector",v[:,0])
 #    print("Second Eigenvector",v[:,1])
-    
+
     #Sorting eigen values in descending order and slicing the first d e-values
-    idx = w.argsort()[-d:][::-1]   
+    idx = w.argsort()[-d:][::-1]
     w = w[idx]
     v = v[:,idx]
-    
-    #Creating the diagonal of d eigen values    
+
+    #Creating the diagonal of d eigen values
     wDiag = np.diag(w)
     #Taking element-wise squareroot of the diagonal of d eigen values
     wDiagSQRT = np.sqrt(wDiag)
-    
+
     #Creating our point cloud in d-dimensions by multiplying eigen vectors with
-    #the square root of diagonal of eigen values.    
+    #the square root of diagonal of eigen values.
     X = np.matmul(v,wDiagSQRT)
-        
+
     return X
 
 
 """
-Implement ISOMAP 
+Implement ISOMAP
 
 """
 def doISOMAP( pointcloud, d, k):
@@ -97,7 +97,7 @@ def doISOMAP( pointcloud, d, k):
     '''
     knearestMatrix = kneighbors_graph(X, k, mode='distance')
     distMatrix = floyd_warshall(knearestMatrix)
-    
+
     return doMDS(distMatrix, d)
 
 
@@ -129,21 +129,21 @@ def getDistanceMatrixSquared(vector):
 
 
 """
-Compare your results to the results from the sklearn example 
+Comparing my results to the results from the sklearn example
 
 
 
-I tested and compared the algorithms with n_points = 500, n_neighbor=10 and 
+I tested and compared the algorithms with n_points = 500, n_neighbor=10 and
 n_component=2
 
-On average, my implementation of MDS is nearly 30% faster 
-(on 500 n_points, my MDS takes ~20seconds and the sklearn manifold version 
+On average, my implementation of MDS is nearly 30% faster
+(on 500 n_points, my MDS takes ~20seconds and the sklearn manifold version
 takes around ~75seconds)
 
 On the otherhand, my implementation of ISOMAP takes nearly 50% more time when
 compared with the sklearn implementation. (~30 seconds versus ~15 seconds)
 This is probably because of the version of Floyd-Warshall algorithm i use and
-the nearest neighbor graph I use. 
+the nearest neighbor graph I use.
 
 Both the algorithms create very similar results as compared to their sklearn
 counterpart. With the ISOMAPS being nearly identical.
@@ -222,21 +222,21 @@ plt.axis('tight')
 
 
 """
-Use the data "S" with PCA and, project and plot the data and explain your observation.
+Use the data "S" with PCA and, project and plot the data.
 
 
 
 Generally, PCA produces an approximate normal of the point cloud. My
 implementation of MDS uses the point cloud to create a similarity matrix and
-then essentially performs PCA on the disimilarity matrix. The covariance of 
+then essentially performs PCA on the disimilarity matrix. The covariance of
 data (used by the PCA algorithm) and the euclidean distance between data points
-(used in MDS) are nearly identical. This is (probably) why the results of the my MDA and 
+(used in MDS) are nearly identical. This is (probably) why the results of the my MDA and
 PCA are very similar.
 
-PCA did not do a very good job of reducing the dimensions of the dataset to 2 
-dimensions. There's a lot of overlap of the points and there's not much that 
+PCA did not do a very good job of reducing the dimensions of the dataset to 2
+dimensions. There's a lot of overlap of the points and there's not much that
 can be 'analyzed' other than an estimate of the original shape of the data.
-PCA was unbale to unwrap the data and completely lay it out for further analysis. 
+PCA was unbale to unwrap the data and completely lay it out for further analysis.
 
 
 """
@@ -262,6 +262,3 @@ slidesExample = [[0,93,82,133],
                  [133,60,111,0]]
 
 slidesExample=np.array(slidesExample)
-
-
-
