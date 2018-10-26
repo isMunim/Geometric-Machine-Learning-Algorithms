@@ -3,7 +3,7 @@
 """
 Created on Sun Jan 14 18:02:14 2018
 
-@author: Mustafa Hajij
+@author: Mustafa Hajij and Munim Zahid
 """
 
 from unionfind import *

@@ -29,13 +29,13 @@ Here's a list of algorithm implemented in this repo:
 - **ε-neighborhood graph clusters**
 
 **Section 4**
-8. coming soon
-9. coming soon
-10. coming soon
-11. coming soon
-12. coming soon
-13. coming soon
-14. coming soon
+- **Mapper Algorithm** for dimensionality reduction and analysis.
+
+coming soon...
+
+**Section 5**
+**Section 6**
+**Section 7**
 
 
 [install]: https://www.anaconda.com/download/

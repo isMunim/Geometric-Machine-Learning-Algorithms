@@ -1,7 +1,7 @@
 """
 Created on Tue Feb 20 17:49:51 2018
 
-@author: Mustafa Hajij
+@author: Munim Zahid
 """
 
 import networkx as nx
