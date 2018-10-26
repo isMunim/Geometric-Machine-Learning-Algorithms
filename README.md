@@ -7,7 +7,7 @@ These  packages/libraries are used throughout this repository:
 1. [scikit learn](http://scikit-learn.org/)
 2. [networkx](https://networkx.github.io/)
 3. [numpy](http://www.numpy.org/)
-4. [networkx](matplotlib.org)
+4. [matplotlib](matplotlib.org)
 5. [pandas](https://pandas.pydata.org/)
 
 I highly recommend that you [install] *anaconda*. All of the packages in the above list come with Anaconda except for networkx. To install networkx [go to this link]
