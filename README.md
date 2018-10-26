@@ -27,7 +27,15 @@ Here's a list of algorithm implemented in this repo:
 5. **Zahn's Clustering Algorithm**
 6. **ε-neighborhood graph** (epsilon neighborhood graph)
 7. **ε-neighborhood graph clusters**
-8. 
+
+**Section 4**
+8. coming soon
+9. coming soon
+10. coming soon
+11. coming soon
+12. coming soon
+13. coming soon
+14. coming soon
 
 
 [install]: https://www.anaconda.com/download/
