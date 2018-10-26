@@ -2,7 +2,7 @@
 """
 Created on Mon Apr  9 20:20:15 2018
 
-@author: Mustafa Hajij
+@author: Munim Zahid
 """
 
 import matplotlib.pyplot as plt
@@ -13,7 +13,7 @@ import pandas as pd
 from sklearn.manifold import MDS
 from sklearn.manifold import spectral_embedding as SE
 """
-Use the following function to draw a graph
+Use the following functions to draw a graph
 the following function accepts as input a graph G
 and a dictionary pos
 
@@ -24,7 +24,7 @@ def getDistanceMatrix(graph):
     '''
         compute distance matrix of a weighted graph
         Input: Graph G
-        Output: NP array where dimension = 
+        Output: NP array where dimension =
                         [number of egdes in G x number of egdes in G ]
         Dependencies: pandas DataFrame (see pandas.pydata.org)
     '''
@@ -47,7 +47,7 @@ def setWeight(graph,val):
         b=edge[1]
         if(G.get_edge_data(a,b) == {} ): #Checks if graph is unweighted
             graph.add_edge(a, b, weight=val) #Sets graph weight to input val
-        
+
 
 def getGraphInfo(graph):
     '''
@@ -57,12 +57,12 @@ def getGraphInfo(graph):
         a=edge[0]
         b=edge[1]
         if(G.get_edge_data(a,b) == {} ):
-            print("no weight")    
+            print("no weight")
         else:
             print("edge "+str(edge)+" has  weight " + str(graph[a][b]['weight']) )
 
 def draw_graph(G,pos): # this function is provided for you and you do not need to alter it.
-     
+
      nx.draw_networkx_nodes(G, pos,
                        node_color='r',
                        node_size=500,
@@ -81,19 +81,19 @@ print("the nodes of the graph are : ")
 print(G.nodes())
 
 #(3) define the position dictionary
-pos = {0: np.array([ 0.82877618,  0.53211873]), 
-       1: np.array([ 0.8059564,  0.       ]), 
-       2: np.array([ 0.51148475,  0.37349706]), 
-       3: np.array([ 0.54462887,  0.89200482]), 
-       4: np.array([ 0.31695909,  0.62593525]), 
-       5:np.array([ 0.02260257,  1.        ]), 
-       6: np.array([ 0.        ,  0.46707769]), 
+pos = {0: np.array([ 0.82877618,  0.53211873]),
+       1: np.array([ 0.8059564,  0.       ]),
+       2: np.array([ 0.51148475,  0.37349706]),
+       3: np.array([ 0.54462887,  0.89200482]),
+       4: np.array([ 0.31695909,  0.62593525]),
+       5:np.array([ 0.02260257,  1.        ]),
+       6: np.array([ 0.        ,  0.46707769]),
        7: np.array([ 0.28222528,  0.10714391])}
 
 print("the position of the nodes of the graph are : ")
 print(pos)
 
-# draw the graph 
+# draw the graph
 
 #draw_graph(G,pos)
 
@@ -107,16 +107,16 @@ print(pos)
 # the output is a dictionary of positions that assigns to everynode in the graph a position as in the above example
 
 
-def graph_node_position_mds(G): 
+def graph_node_position_mds(G):
     #Setting weight of all edges to 1 if graph is unweighted (skips otherwise)
     setWeight(G,1)
-    
+
     #Caclulating distance/dissimilarity matrix and storing in an ndarray
     distMat = getDistanceMatrix(G);
     print(distMat)
     #Running sklearn.manifold.MDS on the matrix
     MDS_pos = MDS(n_components=2,dissimilarity='precomputed').fit_transform(distMat)
-    
+
 #    print(MDS_pos) prints ndarray
     #Declaring empty dictionary to store the MDS node positions
     MDS_pos_dict = {}
@@ -129,13 +129,13 @@ def graph_node_position_mds(G):
 def graph_node_position_Laplacian(G):
     #Setting weight of all edges to 1 if graph is unweighted (skips otherwise)
     setWeight(G,1)
-    
+
     #Caclulating distance/dissimilarity matrix and storing in an ndarray
     distMat = getDistanceMatrix(G);
-    
+
     #Running sklearn.manifold.spectralembedding on the matrix
     SE_pos = SE(distMat, n_components=2)
-    
+
 #    print(SE_pos) prints ndarray
     #Declaring empty dictionary to store the MDS node positions
     SE_pos_dict = {}
@@ -147,23 +147,23 @@ def graph_node_position_Laplacian(G):
 
 
 #(II) test your results :
-    #A    
+    #A
         # (1 ) run the function  graph_node_position_mds and save the results as MDS_pos
         # (2 ) run the function draw_graph(G,MDS_pos)
-  
-    # B 
+
+    # B
         # (1 ) run the function graph_node_position_Laplacian and save the results as Laplacian_pos
         # (2 ) run the function draw_graph(G,Laplacian_pos)
-   
+
 #Test A
-    
+
 MDS_pos = graph_node_position_mds(G);
 print("the position of the nodes of the graph's MDS are : ")
 print(MDS_pos)
 draw_graph(G,MDS_pos)
 
 #Test B
-        
+
 #Laplacian_pos = graph_node_position_Laplacian(G);
 #print("the position of the nodes of the graph's laplacian are : ")
 #print(Laplacian_pos)

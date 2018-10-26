@@ -34,9 +34,11 @@ Here's a list of algorithm implemented in this repo:
 **Section 5**
 - **Zero Barcode Algorithm** for a point cloud
 - **Zero Barcode Algorithm** for a scalar function
-coming soon...
 
 **Section 6**
+- **MDS** based node position
+- **Laplacian** based node position
+
 **Section 7**
 
 
