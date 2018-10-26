@@ -31,9 +31,11 @@ Here's a list of algorithm implemented in this repo:
 **Section 4**
 - **Mapper Algorithm** for dimensionality reduction and analysis.
 
+**Section 5**
+- **Zero Barcode Algorithm** for a point cloud
+- **Zero Barcode Algorithm** for a scalar function
 coming soon...
 
-**Section 5**
 **Section 6**
 **Section 7**
 
