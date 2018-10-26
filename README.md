@@ -16,17 +16,17 @@ I highly recommend that you [install] *anaconda*. All of the packages in the abo
 Here's a list of algorithm implemented in this repo:
 
 **Section 1**
-1. color quantization via **k-means** and random selection
+- color quantization via **k-means** and random selection
 
 **Section 2**
-2. minimal spanning tree via my implementation of **kruskals algorithm**
+- minimal spanning tree via my implementation of **kruskals algorithm**
 
 **Section 3**
-3. **Breadth first search** algorithm to compute the connected components of a graph.
-4. **Euclidean Minimum Spanning Tree** via my implementation of **kruskals algorithm**
-5. **Zahn's Clustering Algorithm**
-6. **ε-neighborhood graph** (epsilon neighborhood graph)
-7. **ε-neighborhood graph clusters**
+- **Breadth first search** algorithm to compute the connected components of a graph.
+- **Euclidean Minimum Spanning Tree** via my implementation of **kruskals algorithm**
+- **Zahn's Clustering Algorithm**
+- **ε-neighborhood graph** (epsilon neighborhood graph)
+- **ε-neighborhood graph clusters**
 
 **Section 4**
 8. coming soon
