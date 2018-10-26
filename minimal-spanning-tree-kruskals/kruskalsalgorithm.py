@@ -3,7 +3,7 @@
 """
 Created on Sun Jan 14 18:02:14 2018
 
-@author: Mustafa Hajij
+@author: isMunim
 """
 
 from unionfind import *
@@ -14,10 +14,8 @@ class kruskalsalgorithm():
         self.original_graph=inputgraph
         self.tree=nx.Graph()
 
-
-    # uncomment the following function and start your implementation as described in lecture 2
     def spanningtree(self):
-        '''
+        ''' my pseducode for this algorithm
         Let G=(V,E,w)
         Pseudocode:
         A= {}
@@ -34,12 +32,9 @@ class kruskalsalgorithm():
         #print(self.original_graph.edges(data=True)) TEST
         sortedList=sorted(self.original_graph.edges(data=True), key=lambda x: x[2]['weight'])
 
-
         #Creating UnionFind objects
         uf = UnionFind()
         uf.insert_objects(self.original_graph.nodes())
-
-
 
         #mst=nx.Graph() already created in constructor
         for u,v,w in sortedList: #foreach (u, v) in E

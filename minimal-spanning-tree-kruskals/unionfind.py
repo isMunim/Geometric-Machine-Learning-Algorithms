@@ -8,7 +8,7 @@ Created on Tue Jun  6 09:19:12 2017
 class UnionFind:
     def __init__(self):
         '''\
-Create an empty union find data structure.'''
+Creat an empty union find data structure.'''
         self.num_weights = {}
         self.parent_pointers = {}
         self.num_to_objects = {}
@@ -16,7 +16,7 @@ Create an empty union find data structure.'''
         self.__repr__ = self.__str__
     def insert_objects(self, objects):
         '''\
-Insert a sequence of objects into the structure.  All must be Python hashable.'''
+Inserting a sequence of objects into the structure.  All must be Python hashable.'''
         for object in objects:
             self.find(object);
     def find(self, object):

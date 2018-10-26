@@ -2,14 +2,14 @@
 """
 Created on Thu Jan 18 16:39:14 2018
 
-@author: Mustafa Hajij
+@author: Mustafa Hajij and @isMunim
 
 """
 import networkx as nx
 from unionfind import *
 from kruskalsalgorithm import *
 
-# Load a graph example from networkx
+# Loading a graph example from networkx
 graph=nx.house_x_graph()
 
 print("The nodes of the graph are given by the list : ")
@@ -51,6 +51,6 @@ for edge in mst.edges():
     b=edge[1]
     print("edge "+str(edge)+" has  weight " + str(mst[a][b]['weight']) )
 
-# now you will need to calculate the minimal spanning tree for the graph above.
+# now we will need to calculate the minimal spanning tree for the graph above.
 
-# Implement Kruskal algorothm and run it on the above graph example and record your result.
+# Implement Kruskal algorothm and run it on the above graph example and record your result. :)
