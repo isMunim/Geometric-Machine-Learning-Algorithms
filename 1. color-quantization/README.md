@@ -1,4 +1,4 @@
-### Color Quantization
+### Section 1 --> Color Quantization
 
 This is a getting **started** file.
 

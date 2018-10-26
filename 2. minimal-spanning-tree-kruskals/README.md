@@ -1,4 +1,4 @@
-### Creating a minimal spanning tree using kruskals algorithm
+### Section 2 --> Creating a minimal spanning tree using kruskals algorithm
 
 Here, I implemented kruskals algorithm to generate minimal spanning trees.
 
